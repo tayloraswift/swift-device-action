@@ -1,0 +1,27 @@
+on:
+    workflow_call:
+        inputs:
+            xcode-scheme:
+                description: 'The Xcode scheme to build'
+                required: true
+                type: string
+
+            destination:
+                description: 'The destination platform'
+                required: true
+                type: string
+
+jobs:
+    build:
+        runs-on: macos-15
+        name: ${{ inputs.destination }}
+        steps:
+            -   name: Checkout repository
+                uses: actions/checkout@v4
+
+            -   name: Build
+                run: |
+                    swift --version
+                    xcrun xcodebuild build \
+                        -scheme "${{ inputs.xcode-scheme }}" \
+                        -destination "generic/platform=${{ inputs.destination }}"
