@@ -31,6 +31,7 @@ jobs:
             -   name: Build
                 run: |
                     swift --version
+                    xcrun xcodebuild build -list
                     xcrun xcodebuild build \
                         -scheme "${{ inputs.xcode-scheme }}" \
                         -destination "generic/platform=${{ inputs.destination }}"
