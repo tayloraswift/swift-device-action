@@ -10,7 +10,7 @@ on:
                 description: 'The Xcode version to use'
                 required: false
                 type: string
-                default: 'Xcode_16.4'
+                default: 'Xcode_26.2'
 
             destination:
                 description: 'The destination platform'
