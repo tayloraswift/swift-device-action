@@ -1,1 +1,1 @@
-# Swift Device Compatibility Action
+# Swift device compatibility action
